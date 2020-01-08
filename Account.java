@@ -7,19 +7,22 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(float balance) {
+	public float setBalance(float balance) {
 		if(balance > 0) {
 			this.balance = balance;	
 		}
+		return this.balance;
 	}
-	public void deposit (float amount) {
+	public float deposit(float amount) {
 		if (amount > 0) {
 			balance += amount;
 		}
+		return balance;
 	}
-	public void withdraw (float amount) {
+	public float withdraw(float amount) {
 		if (amount > 0) {
 			balance -= amount;
 		}
+		return balance;
 	}	
 }
