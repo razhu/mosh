@@ -1,3 +1,5 @@
+import memento.Editor;
+import state.abuse.Stopwatch;
 
 public class Main {
 
@@ -28,7 +30,7 @@ public class Main {
 		tb.enable("text box enabled");
 		Button b = new Button();
 		b.enable("Button enabled");
-		// polimorfism: many forms. 
+		// polimorphism: many forms. 
 		System.out.println("what follows is a polimorfism stuff");
 		TextBox tb1 = new TextBox();
 		tb1.draw();
@@ -38,6 +40,23 @@ public class Main {
 		System.out.println("visto desde otro angulo...");
 		drawIOControl(new TextBox());
 		drawIOControl(new Button());
+		// uml basic concepts
+		// _____________> inheritance
+		// o____________> composition
+		// ------>dependency
+		// memento pattern. add mechanisms of undo
+		System.out.println("-----------------------> memento patterno example");
+		Editor ed = new Editor();
+		ed.setContent("a");
+		ed.setContent("b");
+		ed.setContent("c");
+		System.out.println(ed.getContent());
+		String x = ed.undo(ed);
+		System.out.println("after undo.. " + x);
+		// state pattern.
+		// other samples
+		Stopwatch sw = new Stopwatch();
+		sw.click();
 	}
 	
 	public static void drawIOControl(IOControl ioc) {
